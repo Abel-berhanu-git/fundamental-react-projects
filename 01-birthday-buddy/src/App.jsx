@@ -8,7 +8,7 @@ const App = () => {
     <main>
       <section className='container'>
         <h3> {users.length} birthdays today</h3>
-        <List users={userList} />
+        <List users={users} />
         <div
           className='btn clear-all'
           onClick={() => {
