@@ -8,7 +8,8 @@ import Menu from './Menu';
 // const categoriesList = menuData.map((menuItem) => menuItem.category);
 // const uniqueCategories = new Set(['all', ...categoriesList]);
 const allCategories = [
-  ...new Set(['all', ...menuData.map((menuItem) => menuItem.category)]),
+  'all',
+  ...new Set(menuData.map((menuItem) => menuItem.category)),
 ];
 
 const App = () => {
