@@ -25,16 +25,16 @@ const TaskForm = ({ addTask, editing, setEditing, editTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='task-form' onSubmit={handleSubmit}>
       <h4>Task manager</h4>
-      <div className='form-control'>
+      <div className='form-row'>
         <input
           type='text'
           className='form-input'
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
-        <button type='submit' className='btn'>
+        <button type='submit' className='btn submit-btn text-small'>
           {editing.editingFlag ? 'edit' : 'add'}
         </button>
       </div>

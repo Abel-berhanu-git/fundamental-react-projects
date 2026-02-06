@@ -10,7 +10,7 @@ const SingleTask = ({
   setEditing,
 }) => {
   return (
-    <article className='single-item'>
+    <article className='task-item'>
       <input
         type='checkbox'
         name=''
@@ -18,7 +18,7 @@ const SingleTask = ({
         checked={completed}
         onChange={() => completedTask(id)}
       />
-      <p style={{ textDecoration: completed && 'line-through' }}>{task}</p>
+      <p className='item-title' style={{ textDecoration: completed && 'line-through' }}>{task}</p>
       <div className='btn-container'>
         <button
           type='button'

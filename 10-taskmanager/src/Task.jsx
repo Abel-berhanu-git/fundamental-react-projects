@@ -2,7 +2,7 @@ import SingleTask from './SingleTask';
 
 const Task = ({ tasks, removeTask, completedTask, setEditing }) => {
   return (
-    <div className='items'>
+    <div className='task-list'>
       {tasks.map((task) => {
         return (
           <SingleTask
