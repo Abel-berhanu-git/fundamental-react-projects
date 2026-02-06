@@ -290,13 +290,6 @@ input[type='text'] {
 }
 
 /* for alternative */
-.form-container {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  column-gap: 2rem;
-  justify-self: start;
-}
-
 .color-form div {
   margin-left: 1rem;
   display: flex;
