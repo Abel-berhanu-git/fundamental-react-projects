@@ -52,6 +52,12 @@ const App = () => {
     toast.success('Task edited ');
   };
 
+  // clear All
+  const clearAll = () => {
+    setTasks([]);
+    toast.success('all tasks are cleared');
+  };
+
   return (
     <section className='section-center'>
       <TaskForm
@@ -66,6 +72,11 @@ const App = () => {
         completedTask={completedTask}
         setEditing={setEditing}
       />
+      {tasks.length > 0 && (
+        <button type='button' className='btn clear-btn' onClick={clearAll}>
+          clear all
+        </button>
+      )}
       <ToastContainer position='top-center' />
     </section>
   );

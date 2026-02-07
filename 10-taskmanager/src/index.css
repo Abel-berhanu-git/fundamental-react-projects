@@ -352,3 +352,24 @@ input[type='checkbox']{
 .Toastify__toast {
   text-transform: capitalize;
 }
+
+.clear-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 0.25rem 0.5rem;
+  margin-top: 2rem;
+  font-size: var(--small-text);
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  cursor: pointer;
+  background: var(--red-light);
+  color: var(--red-dark);
+  border: none;
+  border-radius: var(--borderRadius);
+  transition: var(--transition);
+}
+
+.clear-btn:hover {
+  background: var(--red-dark);
+  color: var(--white);
+}
