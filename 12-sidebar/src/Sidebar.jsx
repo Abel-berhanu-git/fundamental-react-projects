@@ -7,7 +7,7 @@ import { useGlobalContext } from './Context';
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
-    <nav className={isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}>
+    <aside className={isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}>
       <div className='sidebar-header'>
         <img src={logo} alt='logo' className='logo' />
         <button type='button' className='close-btn' onClick={closeSidebar}>
@@ -39,7 +39,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
-    </nav>
+    </aside>
   );
 };
 export default Sidebar;
