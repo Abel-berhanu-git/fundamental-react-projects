@@ -11,7 +11,7 @@ const Sidebar = () => {
     setPageId(activePageId);
   };
 
-  console.log(pageId);
+  // console.log(pageId);
 
   return (
     <aside className={isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}>
