@@ -66,6 +66,7 @@ const sublinks = [
       },
     ],
   },
+  { pageId: nanoid(), page: 'about us', url: '/about' },
   {
     page: 'resources',
     pageId: nanoid(),
@@ -84,6 +85,7 @@ const sublinks = [
       },
     ],
   },
+  { pageId: nanoid(), page: 'pricing', url: '/price' },
 ];
 
 export default sublinks;

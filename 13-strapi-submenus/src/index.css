@@ -313,6 +313,36 @@ nav {
   transform: scale(1.05);
 }
 
+.login-btn {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .toggle-btn {
+    display: none;
+  }
+
+  .login-btn {
+    display: block;
+    background: var(--primary-700);
+    padding: 0.5rem 1.25rem;
+    color: var(--white);
+    font-weight: 500;
+    letter-spacing: var(--letterSpacing);
+    text-transform: capitalize;
+    box-shadow: var(--shadow-4);
+    /* align-self: center; */
+  }
+
+  .nav-center {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    /*to align-self: stretch for child element like  nav-links we need to set parent element like nav-center some height*/
+    height: 100%;
+    /* align-self: stretch; */
+  }
+}
 /* 
 ============= 
 Hero
@@ -346,9 +376,6 @@ Hero
     max-width: 35em;
     margin: 0 auto;
   }
-  .toggle-btn {
-    display: none;
-  }
 }
 
 /* 
@@ -379,7 +406,7 @@ Sidebar
   transition-duration: 1s;
 }
 .sidebar-container {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem 2rem;
   position: relative;
 }
 .close-btn {
@@ -393,17 +420,54 @@ Sidebar
   cursor: pointer;
 }
 .sidebar article {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--grey-300);
 }
+
 .sidebar h4 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--primary-700);
 }
+
+.page-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-links button {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1.75rem;
+  color: var(--grey-700);
+  cursor: pointer;
+}
+
 .sidebar-sublinks {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 0.5rem;
+  /* toggle stuff */
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-40%);
 }
+
+/* toggle class */
+.show-sublinks {
+  opacity: 1;
+  visibility: visible;
+  max-height: 300px;
+  margin-bottom: 1rem;
+  transform: translateY(0);
+  transition-property: opacity, transform;
+  transition-duration: 1s, 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
 .sidebar-sublinks a {
   display: block;
   color: var(--grey-900);
@@ -418,6 +482,20 @@ Sidebar
 
 .sidebar-sublinks a:hover {
   color: var(--primary-500);
+}
+
+@media screen and (min-width: 768px) {
+  .page-links button {
+    display: none;
+  }
+
+  .sidebar-sublinks {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-bottom: 1rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -437,21 +515,12 @@ NavLinks
 
 @media screen and (min-width: 992px) {
   .nav-links {
-    width: 35rem;
-    margin: 0 auto;
+    /* width: 35rem; */
+    /* margin: 0 auto; */
+    align-self: stretch;
     display: flex;
     justify-content: center;
     z-index: 1;
-  }
-
-  .nav-center {
-    align-self: stretch;
-    display: grid;
-    grid-template-columns: auto 1fr;
-  }
-
-  .logo {
-    align-self: center;
   }
 
   .nav-link {

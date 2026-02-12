@@ -4,7 +4,7 @@ const GlobalContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [pageID, setPageId] = useState(null);
+  const [pageId, setPageId] = useState(null);
   const openSidebar = () => {
     setIsSidebarOpen(true);
   };
@@ -13,7 +13,7 @@ const AppProvider = ({ children }) => {
   };
   return (
     <GlobalContext.Provider
-      value={{ isSidebarOpen, openSidebar, closeSidebar, pageID, setPageId }}
+      value={{ isSidebarOpen, openSidebar, closeSidebar, pageId, setPageId }}
     >
       {children}
     </GlobalContext.Provider>

@@ -22,6 +22,7 @@ const Navbar = () => {
           <FaBarsStaggered />
         </button>
         <NavLinks />
+        <button type='button' className='btn login-btn'>Sing up</button>
       </div>
     </nav>
   );

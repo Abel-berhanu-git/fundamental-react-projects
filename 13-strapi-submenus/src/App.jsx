@@ -10,6 +10,8 @@ const App = () => {
       <Sidebar />
       <Hero />
       <Submenu />
+      {/* <div style={{ height: '100vh', background: 'grey' }}></div>
+      <div style={{ height: '100vh', background: '#e2e8f0' }}></div> */}
     </>
   );
 };
