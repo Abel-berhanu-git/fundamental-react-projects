@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+} from 'react';
 // import cartItems from './data';
 import reducer from './reducer';
 import {
@@ -27,7 +33,6 @@ const GlobalContext = createContext(initialState);
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { totalCost, totalAmount } = getTotals(state.cart);
 
   console.log(state);
 
@@ -68,6 +73,13 @@ const AppProvider = ({ children }) => {
   const resetCart = () => {
     fetchData();
   };
+
+  // 👌 calculate Derived Data(pro way) ( like total, amount) as a separate calculation using useMemo
+  // instead of adding in the initial state and calculate them in reducers
+  const { totalCost, totalAmount } = useMemo(
+    () => getTotals(state.cart),
+    [state.cart],
+  );
 
   return (
     <GlobalContext.Provider
